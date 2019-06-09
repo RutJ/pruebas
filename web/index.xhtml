@@ -1,0 +1,108 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>ABM Producto</title>
+    </h:head>
+    <h:body>
+         <h:form id="frmProducto">
+            <p:panel id="pnlbotones" header="Administracion de Productos">
+                <h:panelGrid id="pnlgBotones" columns="3" cellpadding="3" cellspacing="10"> 
+                    <p:commandButton value="Agregar Producto" id="btnAgregar" actionListener="#{aBMProductoFormBean.agregarProducto()}"
+                                     oncomplete="PF('agregarProducto').show()" update="dglAgregarProducto">
+                    </p:commandButton>
+
+                    <p:commandButton value="Modificar Producto" id="btnModificar" actionListener="#{aBMProductoFormBean.modificarProducto()}"
+                                     oncomplete="PF('modificarProducto').show()" >
+                    </p:commandButton>
+                    
+                    <p:commandButton value="Eliminar Producto" id="btnEliminar" actionListener="#{aBMProductoFormBean.eliminarProducto()}"
+                                     oncomplete="PF('eliminarProducto').show()" >
+                    </p:commandButton>
+                   
+                </h:panelGrid>
+            </p:panel>
+             
+            <!--Seccion Agregar Producto!-->
+
+        <p:dialog id="dglAgregarProducto" widgetVar="agregarProducto" modal="true" resizable="false" header="Complete el formulario para agregar Producto">
+            <h:form id="frmAlta">
+                <p:growl id="mensaje" showDetail="true" />
+                <p:panelGrid id="pnlgAlta" columns="2">
+                    <p:outputLabel value="Codigo" id="lblCodigo"/>
+                    <p:inputText id="txtCodigo" value="#{aBMProductoFormBean.producto.codigo}" required="true" requiredMessage="Debe ingresar Código del producto"/>
+
+                    <p:outputLabel value="Nombre: " id="lblNombreProducto"/>
+                    <p:inputText id="txtNombreProducto" value="#{aBMProductoFormBean.producto.nombreProducto}" required="true" requiredMessage="Debe ingresar el nombre del producto"/>
+
+                    <p:outputLabel value="Marca" id="lblMarca"/>
+                    <p:inputText id="txtMarca" value="#{aBMProductoFormBean.producto.marca}" required="true" requiredMessage="Debe ingresar la Marca del producto"/>
+
+                    <p:outputLabel value="Material" id="lblMaterial"/>
+                    <p:inputText id="txtMaterial" value="#{aBMProductoFormBean.producto.material}" required="true" requiredMessage="Debe ingresar material del producto"/>
+
+                    <p:outputLabel value="Origen" id="lblOrigen"/>
+                    <p:inputText id="txtOrigen" value="#{aBMProductoFormBean.producto.origen}" required="true" requiredMessage="Debe ingresar el origen del producto"/>
+                    
+                    <p:outputLabel value="Dimension" id="lblDimencion"/>
+                    <p:inputText id="txtDimencion" value="#{aBMProductoFormBean.producto.dimension}" required="true" requiredMessage="Debe ingresar el Dimencion del producto"/>
+                    
+                    <p:outputLabel value="Sector" id="lblSector"/>
+                    <p:inputText id="txtSector" value="#{aBMProductoFormBean.producto.sector}" required="true" requiredMessage="Debe ingresar el Sector del producto"/>
+                    
+                    <p:outputLabel value="Precio" id="lblPrecio"/>
+                    <p:inputNumber id="nbrPrecio" value="#{aBMProductoFormBean.producto.precio}" required="true" requiredMessage="Debe ingresar el precio del Producto"/>
+                    
+                    <p:outputLabel value="Stock" id="lblStock"/>
+                    <p:inputNumber id="nbrStock" value="#{aBMProductoFormBean.producto.stock}" required="true" requiredMessage="Debe ingresar el Stock del Producto"/>
+                    
+                    <p:commandButton id="btnAgregaraProducto" value="Agregar" actionListener="#{aBMProductoFormBean.agregarProducto()}"
+                                     onclick="PF('mensaje').show" update="frmProducto" oncomplete="PF('agregarProducto').hide()">
+                    </p:commandButton>
+                </p:panelGrid>
+            </h:form>
+        </p:dialog>
+             
+             <p:panel id="pnlbotones1" header="Administracion de Productos del Catalogo">
+                <h:panelGrid id="pnlgBotones1" columns="3" cellpadding="5" cellspacing="10"> 
+                    <p:commandButton value="Agregar Producto" id="btnAgregar1" actionListener="#{aBMProductoFormBean.agregarProducto()}"
+                                     oncomplete="PF('agregarProducto1').show()">
+                    </p:commandButton>
+
+                    <p:commandButton value="Modificar Producto" id="btnModificar1" actionListener="#{aBMProductoFormBean.modificarProducto()}"
+                                     oncomplete="PF('modificarProducto1').show()" >
+                    </p:commandButton>
+                    
+                    <p:commandButton value="Eliminar Producto" id="btnEliminar1" actionListener="#{aBMProductoFormBean.eliminarProducto()}"
+                                     oncomplete="PF('eliminarProducto1').show()" >
+                    </p:commandButton>
+                   
+                </h:panelGrid>
+            </p:panel>
+             
+             
+             
+            <p:panel id="pnlbotones2" header="Administracion de Productos en Oferta">
+                <h:panelGrid id="pnlgBotones2" columns="3" cellpadding="5" cellspacing="10"> 
+                    <p:commandButton value="Agregar Producto" id="btnAgregar2" actionListener="#{aBMProductoFormBean.agregarProducto()}"
+                                     oncomplete="PF('agregarProducto2').show()">
+                    </p:commandButton>
+
+                    <p:commandButton value="Modificar Producto" id="btnModificar2" actionListener="#{aBMProductoFormBean.modificarProducto()}"
+                                     oncomplete="PF('modificarProducto2').show()" >
+                    </p:commandButton>
+                    
+                    <p:commandButton value="Eliminar Producto" id="btnEliminar2" actionListener="#{aBMProductoFormBean.eliminarProducto()}"
+                                     oncomplete="PF('eliminarProducto2').show()" >
+                    </p:commandButton>
+                   
+                </h:panelGrid>
+            </p:panel>
+
+            
+        </h:form>
+    </h:body>
+</html>
+
