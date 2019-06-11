@@ -3,13 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.modelo.domonio;
+package aplicacion.modelo.dominio;
+
+import java.io.Serializable;
 
 /**
  *
  * @author jack
  */
-public class Producto {
+public class Producto implements Serializable{
     private String codigo;
     //codigo: representa el codigo unico de cada producto
     private String nombreProducto;
@@ -26,7 +28,7 @@ public class Producto {
     //marca: representa la marca del producto
     private String origen;
     //origen: representa el lugar de origen del producto
-    private Boolean prodOferta;
+    private Boolean prodOferta = false;
     //prodOferta: representa si un producto esta en oferta o no 
     private String dimension;
     //dimencion: representa las medidas del producto 
@@ -38,6 +40,7 @@ public class Producto {
      * constructor sin parametros
      */
     public Producto() {
+        
         
     }
     /**
@@ -64,7 +67,7 @@ public class Producto {
         this.material = material;
         this.marca = marca;
         this.origen = origen;
-        prodOferta = false;
+        this.prodOferta = prodOferta;
         this.dimension = dimension;
         this.imagen = imagen;
     }

@@ -7,7 +7,7 @@ package aplicacion.test;
 
 import aplicacion.hibernate.dao.IProductoDAO;
 import aplicacion.hibernate.dao.imp.ProductoDAOImp;
-import aplicacion.modelo.domonio.Producto;
+import aplicacion.modelo.dominio.Producto;
 
 /**
  *
@@ -16,8 +16,7 @@ import aplicacion.modelo.domonio.Producto;
 public class TestCreateProducto {
     public static void main(String[] args) {
         Producto primerproducto = new Producto();
-        primerproducto.setProdOferta(Boolean.TRUE);
-        primerproducto.setCodigo("1234");
+        primerproducto.setCodigo("1234567");
         primerproducto.setDimension("20x24");
         primerproducto.setImagen("prod");
         primerproducto.setMarca("lego");
@@ -25,6 +24,9 @@ public class TestCreateProducto {
         primerproducto.setNombreProducto("bills");
         primerproducto.setOrigen("china");
         primerproducto.setSector("niños");
+        primerproducto.setPrecio(Float.parseFloat("12.4"));
+        primerproducto.setStock(Short.parseShort("12"));
+       
         IProductoDAO productoDAO = new ProductoDAOImp();
         productoDAO.agregarProducto(primerproducto);
     }

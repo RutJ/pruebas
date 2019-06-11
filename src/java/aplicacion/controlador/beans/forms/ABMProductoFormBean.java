@@ -6,8 +6,9 @@
 package aplicacion.controlador.beans.forms;
 
 import aplicacion.controlador.beans.ProductoBean;
-import aplicacion.modelo.domonio.Producto;
+import aplicacion.modelo.dominio.Producto;
 import java.io.Serializable;
+import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.ManagedProperty;
 import javax.faces.bean.ViewScoped;
@@ -21,34 +22,42 @@ import javax.faces.bean.ViewScoped;
 public class ABMProductoFormBean implements Serializable {
     
     @ManagedProperty(value = "#{productoBean}")
-    private ProductoBean productBean;
+    private ProductoBean productoBean;
     private Producto producto;
     
     public ABMProductoFormBean() {
-        producto = new Producto();
-        productBean= new ProductoBean();
+       
+      
     }
+    @PostConstruct
+    public void init(){
+         producto = new Producto();
+    }
+    
+    
     public void agregarProducto(){
-        productBean.agregarProducto(producto);
-    }
-    public void modificarProducto(){
-        productBean.modificarProducto(producto);
-    }
-    public void eliminarProducto(){
-        productBean.eliminarProducto(producto);
+        productoBean.agregarProducto(producto);
     }
     /**
-     * @return the productBean
+    public void modificarProducto(){
+        productoBean.modificarProducto(producto);
+    }
+    public void eliminarProducto(){
+        productoBean.eliminarProducto(producto);
+    }*/
+    
+    /**
+     * @return the productoBean
      */
-    public ProductoBean getProductBean() {
-        return productBean;
+    public ProductoBean getProductoBean() {
+        return productoBean;
     }
 
     /**
-     * @param productBean the productBean to set
+     * @param productoBean the productoBean to set
      */
-    public void setProductBean(ProductoBean productBean) {
-        this.productBean = productBean;
+    public void setProductoBean(ProductoBean productoBean) {
+        this.productoBean = productoBean;
     }
 
     /**

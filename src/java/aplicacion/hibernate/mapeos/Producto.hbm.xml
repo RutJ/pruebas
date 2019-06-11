@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-  <class name="aplicacion.modelo.dominio.Producto" catalog="dbjugueteria" table="Producto"
+  <class name="aplicacion.modelo.dominio.Producto" catalog="jugueteria" table="producto"
          optimistic-lock="version">
         <id name="codigo" type="string">
             <column name="prod_codigo" length="12"/>
@@ -11,7 +11,7 @@
         <property name="nombreProducto" type="string">
             <column name="prod_nombre_producto" length="18" not-null="true"/>
         </property>
-            
+       <!--    
         <property name="sector" type="string">
             <column name="prod_sector" length="35" not-null="true"/>
         </property>
@@ -47,6 +47,6 @@
         <property name="imagen" type="string">
             <column name="prod_imagen" length="25" not-null="true"/>
         </property>  
-        
+        -->
   </class>
 </hibernate-mapping>

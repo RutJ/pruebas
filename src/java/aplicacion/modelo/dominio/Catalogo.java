@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package aplicacion.modelo.domonio;
+package aplicacion.modelo.dominio;
 
 import java.io.Serializable;
 import java.util.HashSet;
@@ -14,6 +14,7 @@ import java.util.Set;
  * @author jack
  */
 public class Catalogo implements Serializable{
+    private String sector;
     private Set<Producto> listaProductos;
 
     public Catalogo() {

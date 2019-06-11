@@ -7,7 +7,7 @@ package aplicacion.controlador.beans;
 
 import aplicacion.hibernate.dao.IProductoDAO;
 import aplicacion.hibernate.dao.imp.ProductoDAOImp;
-import aplicacion.modelo.domonio.Producto;
+import aplicacion.modelo.dominio.Producto;
 import java.io.Serializable;
 
 /**
@@ -24,7 +24,7 @@ public class ProductoBean implements Serializable{
     public void agregarProducto(Producto nuevo){
         productoDAO.agregarProducto(nuevo);
     }
-    
+    /**
     public void modificarProducto(Producto borrado){
         productoDAO.modificarProducto(borrado);
     }

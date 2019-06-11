@@ -7,7 +7,7 @@ package aplicacion.hibernate.dao.imp;
 
 import aplicacion.hibernate.configuracion.HibernateUtil;
 import aplicacion.hibernate.dao.IProductoDAO;
-import aplicacion.modelo.domonio.Producto;
+import aplicacion.modelo.dominio.Producto;
 import java.io.Serializable;
 import java.util.List;
 import org.hibernate.Session;
